@@ -10,7 +10,6 @@ void ViewSF::draw()
         {
             throw runtime_error("Could not load from image.");
         }
-        // CRITICAL FIX: Pass 'true' to adjust the sprite's clipping rect to the new texture size
         d_sprite.setTexture(d_texture, true);
     }
     else
