@@ -7,10 +7,12 @@
 
 class Model
 {
+    vector<vector<int>> d_acceleration;
+
     public:
-        static void render(sf::Image &img);
+        Model();                            // 1.cc
+        void render(sf::Image &img);
+        vector<vector<int>> &acceleration();
 };
 
-
 #endif
-

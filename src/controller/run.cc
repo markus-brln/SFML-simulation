@@ -3,17 +3,16 @@
 
 void Controller::run()
 {
-    cout << "Setting center pixel to white" << endl;
+    cout << "Setting center pixels to red" << endl;
 
-    for (size_t y = WINDOW_SIZE.y / 2 - 20; y < WINDOW_SIZE.y / 2 + 20; ++y)
+    for (size_t y = WINDOW_SIZE.y / 2 - 10; y < WINDOW_SIZE.y / 2 + 10; ++y)
     {
-        for (size_t x = WINDOW_SIZE.x / 2 - 20; x < WINDOW_SIZE.x / 2 + 20; ++x)
+        for (size_t x = WINDOW_SIZE.x / 2 - 10; x < WINDOW_SIZE.x / 2 + 10; ++x)
         {
             d_viewsf.img().setPixel(Vector2u(x, y), Color{
                 static_cast<std::uint8_t>(255),
-                static_cast<std::uint8_t>(255),
-                static_cast<std::uint8_t>(255),
-                 255
+                static_cast<std::uint8_t>(0),
+                static_cast<std::uint8_t>(0)
             });
         }
     }
@@ -32,7 +31,7 @@ void Controller::run()
             handleKeyPresses();             // live input
         }
 
-        Model::render(d_viewsf.img());
+        this->d_model.render(d_viewsf.img());
         
         d_viewsf.draw();
     }
